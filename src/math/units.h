@@ -39,6 +39,10 @@ struct Unit {
     { }
 };
 
+inline size_t qHash(const Rational &key, size_t seed = 0) noexcept {
+    return qHash(key.numerator(), seed) ^ (qHash(key.denominator(), seed + 0x9e3779b9) << 1);
+}
+
 class Units {
     static void pushUnit(Quantity q, QString name);
     static QHash<QMap<QString, Rational>, Unit> m_matchLookup;
