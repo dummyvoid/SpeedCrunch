@@ -54,8 +54,8 @@
 #include "gui/syntaxhighlighter.h"
 #include "math/cmath.h"
 #include "math/floatconfig.h"
-#include "math/operatorchars.h"
-#include "math/units.h"
+#include "core/mathdsl.h"
+#include "core/units.h"
 
 #include <QLatin1String>
 #include <QLocale>
@@ -1744,10 +1744,7 @@ void MainWindow::applySettings()
         m_actions.settingsUnitNegativeExponentFraction->setChecked(true);
     else
         m_actions.settingsUnitNegativeExponentSuperscript->setChecked(true);
-    Units::setNegativeExponentStyle(
-        m_settings->unitNegativeExponentStyle == Settings::UnitNegativeExponentFraction
-            ? Units::NegativeExponentFraction
-            : Units::NegativeExponentSuperscript);
+    setRuntimeUnitNegativeExponentStyle(m_settings->unitNegativeExponentStyle);
 
     if (m_settings->autoAns)
         m_actions.settingsBehaviorAutoAns->setChecked(true);
@@ -3648,7 +3645,7 @@ void MainWindow::handleKeypadButtonPress(Keypad::Button b)
 
     case Keypad::KeyPlus: typeWithRules("+"); break;
     case Keypad::KeyMinus: typeWithRules("−"); break;
-    case Keypad::KeyTimes: typeWithRules(QString(OperatorChars::MulCrossSign)); break;
+    case Keypad::KeyTimes: typeWithRules(QString(MathDsl::MulCrossOp)); break;
     case Keypad::KeyDivide: typeWithRules("÷"); break;
 
     case Keypad::KeyEE: insertTextIntoEditor("e"); break;
@@ -4232,10 +4229,7 @@ void MainWindow::setUnitNegativeExponentStyle(QAction* action)
         return;
 
     m_settings->unitNegativeExponentStyle = style;
-    Units::setNegativeExponentStyle(
-        style == Settings::UnitNegativeExponentFraction
-            ? Units::NegativeExponentFraction
-            : Units::NegativeExponentSuperscript);
+    setRuntimeUnitNegativeExponentStyle(style);
     emit resultFormatChanged();
 }
 

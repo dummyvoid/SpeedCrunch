@@ -21,7 +21,7 @@
 
 #include "core/regexpatterns.h"
 #include "core/unicodechars.h"
-#include "math/operatorchars.h"
+#include "core/mathdsl.h"
 
 #include <QString>
 
@@ -129,8 +129,8 @@ inline bool isCommutativeTopLevelSwap(const QString& interpretedDisplay,
     const QChar commutativeOps[] = {
         QLatin1Char('+'),
         QLatin1Char('*'),
-        QChar(OperatorChars::MulCrossSign),
-        QChar(OperatorChars::MulDotSign)
+        QChar(MathDsl::MulCrossOp),
+        QChar(MathDsl::MulDotOp)
     };
     for (const QChar op : commutativeOps) {
         QString leftA, rightA, leftB, rightB;

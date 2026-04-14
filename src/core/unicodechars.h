@@ -19,46 +19,122 @@
 #ifndef CORE_UNICODECHARS_H
 #define CORE_UNICODECHARS_H
 
+#include "core/regexpatterns.h"
+
 #include <QChar>
-#include <QRegularExpression>
 #include <QString>
 
 namespace UnicodeChars {
 
-inline constexpr QChar Space(0x0020);
-inline constexpr QChar NoBreakSpace(0x00A0);
-inline constexpr QChar MediumMathematicalSpace(0x205F);
-inline constexpr QChar NarrowNoBreakSpace(0x202F);
-inline constexpr QChar PlusSign(0x002B);
-inline constexpr QChar Solidus(0x002F);
-inline constexpr QChar MultiplicationSign(0x00D7);
-inline constexpr QChar MinusSign(0x2212);
-inline constexpr QChar DotOperator(0x22C5);
-inline constexpr QChar Asterisk(0x002A);
-inline constexpr QChar MiddleDot(0x00B7);
-inline constexpr QChar AsteriskOperator(0x2217);
-inline constexpr QChar BulletOperator(0x2219);
-inline constexpr QChar MultiplicationX(0x2715);
-inline constexpr QChar HeavyMultiplicationX(0x2716);
-inline constexpr QChar NAryTimesOperator(0x2A09);
-inline constexpr QChar VectorOrCrossProduct(0x2A2F);
-inline constexpr QChar GreekCapitalOmega(0x03A9);
-inline constexpr QChar OhmSign(0x2126);
-inline constexpr QChar MicroSign(0x00B5);
-inline constexpr QChar GreekSmallLetterMu(0x03BC);
-inline constexpr QChar Pi(0x03C0);
-inline constexpr QChar Summation(0x2211);
-inline constexpr QChar SquareRoot(0x221A);
-inline constexpr QChar CubeRoot(0x221B);
-inline constexpr QChar RightwardsArrow(0x2192);
-inline constexpr QChar Prime(0x2032);
-inline constexpr QChar DoublePrime(0x2033);
-inline constexpr QChar DegreeSign(0x00B0);
+inline constexpr QChar Space(0x0020); // ' '
+inline constexpr QChar DigitZero(0x0030); // '0'
+inline constexpr QChar DigitOne(0x0031); // '1'
+inline constexpr QChar DigitTwo(0x0032); // '2'
+inline constexpr QChar DigitThree(0x0033); // '3'
+inline constexpr QChar DigitFour(0x0034); // '4'
+inline constexpr QChar DigitFive(0x0035); // '5'
+inline constexpr QChar DigitSix(0x0036); // '6'
+inline constexpr QChar DigitSeven(0x0037); // '7'
+inline constexpr QChar DigitEight(0x0038); // '8'
+inline constexpr QChar DigitNine(0x0039); // '9'
+inline constexpr QChar LeftToRightMark(0x200E); // '‎'
+inline constexpr QChar NoBreakSpace(0x00A0); // ' '
+inline constexpr QChar MediumMathematicalSpace(0x205F); // ' '
+inline constexpr QChar NarrowNoBreakSpace(0x202F); // ' '
+inline constexpr QChar LeftParenthesis(0x0028); // '('
+inline constexpr QChar RightParenthesis(0x0029); // ')'
+inline constexpr QChar LeftSquareBracket(0x005B); // '['
+inline constexpr QChar RightSquareBracket(0x005D); // ']'
+inline constexpr QChar PlusSign(0x002B); // '+'
+inline constexpr QChar Colon(0x003A); // ':'
+inline constexpr QChar EqualsSign(0x003D); // '='
+inline constexpr QChar Comma(0x002C); // ','
+inline constexpr QChar FullStop(0x002E); // '.'
+inline constexpr QChar Tilde(0x007E); // '~'
+inline constexpr QChar Apostrophe(0x0027); // '''
+inline constexpr QChar NumberSign(0x0023); // '#'
+inline constexpr QChar ExclamationMark(0x0021); // '!'
+inline constexpr QChar PercentSign(0x0025); // '%'
+inline constexpr QChar QuestionMark(0x003F); // '?'
+inline constexpr QChar CircumflexAccent(0x005E); // '^'
+inline constexpr QChar Solidus(0x002F); // '/'
+inline constexpr QChar ReverseSolidus(0x005C); // '\'
+inline constexpr QChar MultiplicationSign(0x00D7); // '×'
+inline constexpr QChar MinusSign(0x2212); // '−'
+inline constexpr QChar DotOperator(0x22C5); // '⋅'
+inline constexpr QChar Asterisk(0x002A); // '*'
+inline constexpr QChar LowLine(0x005F); // '_'
+inline constexpr QChar QuotationMark(0x0022); // '"'
+inline constexpr QChar LatinSmallLetterI(0x0069); // 'i'
+inline constexpr QChar LatinSmallLetterP(0x0070); // 'p'
+inline constexpr QChar MiddleDot(0x00B7); // '·'
+inline constexpr QChar AsteriskOperator(0x2217); // '∗'
+inline constexpr QChar BulletOperator(0x2219); // '∙'
+inline constexpr QChar MultiplicationX(0x2715); // '✕'
+inline constexpr QChar HeavyMultiplicationX(0x2716); // '✖'
+inline constexpr QChar NAryTimesOperator(0x2A09); // '⨉'
+inline constexpr QChar VectorOrCrossProduct(0x2A2F); // '⨯'
+inline constexpr QChar GreekCapitalOmega(0x03A9); // 'Ω'
+inline constexpr QChar OhmSign(0x2126); // 'Ω'
+inline constexpr QChar MicroSign(0x00B5); // 'µ'
+inline constexpr QChar GreekSmallLetterMu(0x03BC); // 'μ'
+inline constexpr QChar Pi(0x03C0); // 'π'
+inline constexpr QChar Summation(0x2211); // '∑'
+inline constexpr QChar SquareRoot(0x221A); // '√'
+inline constexpr QChar CubeRoot(0x221B); // '∛'
+inline constexpr QChar RightwardsArrow(0x2192); // '→'
+inline constexpr QChar Prime(0x2032); // '′'
+inline constexpr QChar DoublePrime(0x2033); // '″'
+inline constexpr QChar DegreeSign(0x00B0); // '°'
+inline constexpr QChar MasculineOrdinalIndicator(0x00BA); // 'º'
+inline constexpr QChar SuperscriptPlus(0x207A); // '⁺'
+inline constexpr QChar SuperscriptMinus(0x207B); // '⁻'
+inline constexpr QChar SuperscriptZero(0x2070); // '⁰'
+inline constexpr QChar SuperscriptOne(0x00B9); // '¹'
+inline constexpr QChar SuperscriptTwo(0x00B2); // '²'
+inline constexpr QChar SuperscriptThree(0x00B3); // '³'
+inline constexpr QChar SuperscriptFour(0x2074); // '⁴'
+inline constexpr QChar SuperscriptFive(0x2075); // '⁵'
+inline constexpr QChar SuperscriptSix(0x2076); // '⁶'
+inline constexpr QChar SuperscriptSeven(0x2077); // '⁷'
+inline constexpr QChar SuperscriptEight(0x2078); // '⁸'
+inline constexpr QChar SuperscriptNine(0x2079); // '⁹'
+// These pi variants are non-BMP Unicode code points (> U+FFFF), so they
+// cannot be represented as a single QChar (UTF-16 code unit). We keep them
+// as char32_t and feed them to QString::fromUcs4 when normalizing aliases.
 inline constexpr char32_t MathematicalBoldSmallPiCodePoint = 0x1D6D1;
 inline constexpr char32_t MathematicalItalicSmallPiCodePoint = 0x1D70B;
 inline constexpr char32_t MathematicalSansSerifBoldSmallPiCodePoint = 0x1D745;
 inline constexpr char32_t MathematicalSansSerifBoldItalicSmallPiCodePoint = 0x1D7B9;
 
+// Returns true if `ch` is a superscript decimal digit (0-9).
+// Example input/output: '²' -> true, '2' -> false.
+inline bool isSuperscriptDigit(QChar ch)
+{
+    return ch == SuperscriptOne || ch == SuperscriptTwo || ch == SuperscriptThree
+        || (ch.unicode() >= SuperscriptZero.unicode() && ch.unicode() <= SuperscriptNine.unicode());
+}
+
+// Returns true if `ch` is a superscript sign used in exponents.
+// Example input/output: '⁻' -> true, '-' -> false.
+inline bool isSuperscriptSign(QChar ch)
+{
+    return ch == SuperscriptMinus || ch == SuperscriptPlus;
+}
+
+// Returns true when `ch` is accepted inside a simple unit identifier.
+// Example input/output: 'Ω' -> true, '/' -> false.
+inline bool isUnitIdentifierChar(QChar ch)
+{
+    return ch.isLetterOrNumber() || ch == LowLine
+        || ch == MicroSign
+        || ch == GreekCapitalOmega
+        || ch == DegreeSign
+        || ch == MasculineOrdinalIndicator;
+}
+
+// Replaces mathematical styled pi symbols with plain 'π'.
+// Example input/output: "𝛑 + π" -> "π + π".
 inline QString normalizePiAliasesToPi(QString text)
 {
     const QString piSymbol(Pi);
@@ -69,31 +145,38 @@ inline QString normalizePiAliasesToPi(QString text)
     return text;
 }
 
+// Normalizes unit-symbol aliases to canonical forms.
+// Example input/output:
+// "Ω(U+2126) μ(U+03BC) º(U+00BA)" -> "Ω(U+03A9) µ(U+00B5) °(U+00B0)".
 inline QString normalizeUnitSymbolAliases(QString text)
 {
     text.replace(OhmSign, GreekCapitalOmega);
     text.replace(GreekSmallLetterMu, MicroSign);
-    text.replace(QChar(0x00BA), DegreeSign); // º -> °
+    text.replace(MasculineOrdinalIndicator, DegreeSign);
     return text;
 }
 
+// Normalizes ASCII sexagesimal marks to Unicode prime symbols.
+// Example input/output: "12'34\"" -> "12′34″".
 inline QString normalizeSexagesimalSymbolAliases(QString text)
 {
-    text.replace(QChar('\''), Prime);
-    text.replace(QChar('"'), DoublePrime);
+    text.replace(Apostrophe, Prime);
+    text.replace(QuotationMark, DoublePrime);
     return text;
 }
 
+// Normalizes pi text for display while preserving identifiers (e.g. "pixel").
+// Example input/output: "2*pi + 𝛑 + pixel" -> "2*π + π + pixel".
 inline QString normalizePiForDisplay(QString text)
 {
     text = normalizePiAliasesToPi(text);
 
     auto isIdentifierChar = [](QChar ch) {
-        return ch.isLetter() || ch.isDigit() || ch == QChar('_');
+        return ch.isLetter() || ch.isDigit() || ch == LowLine;
     };
 
     for (int i = 0; i + 1 < text.size();) {
-        if (text.at(i) == QChar('p') && text.at(i + 1) == QChar('i')) {
+        if (text.at(i) == LatinSmallLetterP && text.at(i + 1) == LatinSmallLetterI) {
             const bool hasLeft = i > 0;
             const bool hasRight = i + 2 < text.size();
             const bool leftIsIdentifier = hasLeft && isIdentifierChar(text.at(i - 1));
@@ -110,21 +193,13 @@ inline QString normalizePiForDisplay(QString text)
     return text;
 }
 
+// Rewrites root/summation function words to display symbols.
+// Example input/output: "sqrt(x)+cbrt(y)+summation(k)" -> "√(x)+∛(y)+∑(k)".
 inline QString normalizeRootFunctionAliasesForDisplay(QString text)
 {
-    static const QRegularExpression summationRE(
-        QStringLiteral(R"((?<![\p{L}\p{N}_$])summation(?![\p{L}\p{N}_$]))"),
-        QRegularExpression::CaseInsensitiveOption);
-    static const QRegularExpression sqrtRE(
-        QStringLiteral(R"((?<![\p{L}\p{N}_$])sqrt(?![\p{L}\p{N}_$]))"),
-        QRegularExpression::CaseInsensitiveOption);
-    static const QRegularExpression cbrtRE(
-        QStringLiteral(R"((?<![\p{L}\p{N}_$])cbrt(?![\p{L}\p{N}_$]))"),
-        QRegularExpression::CaseInsensitiveOption);
-
-    text.replace(summationRE, QString(Summation));
-    text.replace(sqrtRE, QString(SquareRoot));
-    text.replace(cbrtRE, QString(CubeRoot));
+    text.replace(RegExpPatterns::summationWord(), QString(Summation));
+    text.replace(RegExpPatterns::sqrtWord(), QString(SquareRoot));
+    text.replace(RegExpPatterns::cbrtWord(), QString(CubeRoot));
     return text;
 }
 
