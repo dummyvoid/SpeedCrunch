@@ -376,19 +376,19 @@ bool canonicalizeStandaloneNumericLiteral(const QString& input, QString* output)
     bool allowGroupingHeuristic = true;
 
     QString prefix;
-    if (trimmed.startsWith(QLatin1String("0x"), Qt::CaseInsensitive)) {
+    if (trimmed.startsWith(MathDsl::HexPrefix, Qt::CaseInsensitive)) {
         base = 16;
         groupingSize = 4;
         allowGroupingHeuristic = false;
         prefix = trimmed.left(2);
         mantissa = trimmed.mid(2);
-    } else if (trimmed.startsWith(QLatin1String("0o"), Qt::CaseInsensitive)) {
+    } else if (trimmed.startsWith(MathDsl::OctPrefix, Qt::CaseInsensitive)) {
         base = 8;
         groupingSize = 3;
         allowGroupingHeuristic = false;
         prefix = trimmed.left(2);
         mantissa = trimmed.mid(2);
-    } else if (trimmed.startsWith(QLatin1String("0b"), Qt::CaseInsensitive)) {
+    } else if (trimmed.startsWith(MathDsl::BinPrefix, Qt::CaseInsensitive)) {
         base = 2;
         groupingSize = 4;
         allowGroupingHeuristic = false;
@@ -693,13 +693,13 @@ QString NumberFormatter::formatNumericLiteralForDisplay(const QString& input)
         QString token = match.captured(0);
         int prefixLength = 0;
         int groupSize = 3;
-        if (token.startsWith(QLatin1String("0x"), Qt::CaseInsensitive)) {
+        if (token.startsWith(MathDsl::HexPrefix, Qt::CaseInsensitive)) {
             prefixLength = 2;
             groupSize = 4;
-        } else if (token.startsWith(QLatin1String("0o"), Qt::CaseInsensitive)) {
+        } else if (token.startsWith(MathDsl::OctPrefix, Qt::CaseInsensitive)) {
             prefixLength = 2;
             groupSize = 3;
-        } else if (token.startsWith(QLatin1String("0b"), Qt::CaseInsensitive)) {
+        } else if (token.startsWith(MathDsl::BinPrefix, Qt::CaseInsensitive)) {
             prefixLength = 2;
             groupSize = 4;
         }

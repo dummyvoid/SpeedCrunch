@@ -4141,9 +4141,9 @@ Tokens Evaluator::scan(const QString& expr) const
             else if (ch.isDigit()) {
                 // Check for number
                 state = InNumberPrefix;
-            } else if (ch == '#') {
+            } else if (ch == MathDsl::HexPrefixAlt1) {
                 // Simple hexadecimal notation
-                tokenText.append("0x");
+                tokenText.append(MathDsl::HexPrefix);
                 numberBase = 16;
                 state = InNumber;
                 ++i;
@@ -4498,7 +4498,7 @@ Tokens Evaluator::scan(const QString& expr) const
             }
 
             // Make sure a number cannot be followed by another number.
-            if (ch.isDigit() || isRadixChar(ch) || ch == '#')
+            if (ch.isDigit() || isRadixChar(ch) || ch == MathDsl::HexPrefixAlt1)
                 state = Bad;
             else
                 state = Init;

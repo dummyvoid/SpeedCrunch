@@ -530,7 +530,7 @@ inline bool isAllowedLeadingCharAtExpressionStart(const QChar& ch, bool autoAnsE
         return true;
     if (ch == QLatin1Char('~')
         || ch == QLatin1Char('(')
-        || ch == QLatin1Char('#')
+        || ch == MathDsl::HexPrefixAlt1
         || ch == QLatin1Char('?')) {
         return true;
     }
