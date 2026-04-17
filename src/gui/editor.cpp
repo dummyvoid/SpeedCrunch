@@ -419,7 +419,7 @@ static bool textContainsOnlyDegreeOperators(const QString& text)
     if (text.isEmpty())
         return false;
     for (const QChar ch : text) {
-        if (ch != UnicodeChars::DegreeSign && ch != QChar(0x00BA))
+        if (ch != UnicodeChars::DegreeSign && ch != UnicodeChars::MasculineOrdinalIndicator)
             return false;
     }
     return true;
@@ -598,7 +598,7 @@ static bool isUnitIdentifierCharInEditor(const QChar& ch)
            || ch == UnicodeChars::GreekCapitalOmega
            || ch == UnicodeChars::OhmSign
            || ch == UnicodeChars::DegreeSign
-           || ch == QChar(0x00BA);
+           || ch == UnicodeChars::MasculineOrdinalIndicator;
 }
 
 static bool isAllowedUnitBracketChar(const QChar& ch)
@@ -780,7 +780,7 @@ static QString renderUnitAsciiExponentsAsSuperscripts(const QString& unitText)
             digits = match.captured(4);
         }
 
-        if (!sign.isEmpty() && sign != QLatin1String("-") && sign != QString(QChar(0x2212))) {
+        if (!sign.isEmpty() && sign != QLatin1String("-") && sign != QString(MathDsl::SubOp)) {
             output += match.captured(0);
         } else {
             if (!sign.isEmpty())
@@ -855,7 +855,7 @@ static QString normalizeTypedTextForSquareBracketContext(const QString& surround
             ch = UnicodeChars::GreekCapitalOmega;
         else if (ch == UnicodeChars::GreekSmallLetterMu)
             ch = UnicodeChars::MicroSign;
-        else if (ch == QChar(0x00BA))
+        else if (ch == UnicodeChars::MasculineOrdinalIndicator)
             ch = UnicodeChars::DegreeSign;
 
         if (EditorUtils::isSubtractionOperatorAlias(ch)) {

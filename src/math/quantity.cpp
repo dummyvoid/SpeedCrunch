@@ -146,7 +146,7 @@ enum class AffineTemperatureUnit {
 AffineTemperatureUnit affineTemperatureUnitFromName(QString unitName)
 {
     QString normalized = unitName.trimmed().toLower();
-    normalized.replace(QChar(0x00BA), QChar(0x00B0)); // º -> °
+    normalized.replace(UnicodeChars::MasculineOrdinalIndicator, UnicodeChars::DegreeSign); // º -> °
     if (unitId(normalized) == UnitId::DegreeCelsius) {
         return AffineTemperatureUnit::Celsius;
     }

@@ -66,7 +66,7 @@ inline QString normalizeDivisionOperators(QString text)
 {
     for (QChar& ch : text) {
         if (isDivisionOperatorAlias(ch))
-            ch = QChar(0x29F8); // ⧸ BIG SOLIDUS
+            ch = UnicodeChars::BigSolidus; // ⧸ BIG SOLIDUS
     }
     return text;
 }
@@ -74,8 +74,8 @@ inline QString normalizeDivisionOperators(QString text)
 inline QString normalizeDivisionOperatorsForEditorInput(QString text)
 {
     for (QChar& ch : text) {
-        if (isDivisionOperatorAlias(ch) || ch.unicode() == 0x29F8)
-            ch = QChar(0x002F); // / SOLIDUS
+        if (isDivisionOperatorAlias(ch) || ch == UnicodeChars::BigSolidus)
+            ch = MathDsl::DivOp; // / SOLIDUS
     }
     return text;
 }
@@ -94,7 +94,7 @@ inline QString normalizeAdditionOperators(QString text)
 {
     for (QChar& ch : text) {
         if (isAdditionOperatorAlias(ch))
-            ch = QChar(0x002B); // + PLUS SIGN
+            ch = MathDsl::AddOp; // + PLUS SIGN
     }
     return text;
 }
@@ -520,7 +520,7 @@ inline bool isAllowedLeadingCharAtExpressionStart(const QChar& ch, bool autoAnsE
     if (ch.isLetter()) {
         // Exclude ordinal indicators that behave like symbols on PT/US layouts
         // and are not intended to be valid leading tokens.
-        if (ch == QChar(0x00AA) || ch == QChar(0x00BA))
+        if (ch == UnicodeChars::FeminineOrdinalIndicator || ch == UnicodeChars::MasculineOrdinalIndicator)
             return false;
         return true;
     }

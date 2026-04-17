@@ -756,7 +756,7 @@ enum class AngleUnitKind {
 QString normalizeAngleUnitName(const QString& unitName)
 {
     QString normalized = unitName.trimmed().toLower();
-    normalized.replace(QChar(0x00BA), QChar(0x00B0)); // º -> °
+    normalized.replace(UnicodeChars::MasculineOrdinalIndicator, UnicodeChars::DegreeSign); // º -> °
     return normalized;
 }
 

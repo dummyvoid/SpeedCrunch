@@ -474,9 +474,9 @@ static bool isDegreeSign(const QChar& ch)
     // Accept both DEGREE SIGN (U+00B0) and MASCULINE ORDINAL INDICATOR
     // (U+00BA), plus other degree-like symbols emitted by some layouts/IMEs.
     return ch == MathDsl::Deg  // ° DEGREE SIGN
-           || ch == QChar(0x00BA) // º MASCULINE ORDINAL INDICATOR
-           || ch == QChar(0x02DA) // ˚ RING ABOVE
-           || ch == QChar(0x2218); // ∘ RING OPERATOR
+           || ch == UnicodeChars::MasculineOrdinalIndicator // º MASCULINE ORDINAL INDICATOR
+           || ch == UnicodeChars::RingAbove // ˚ RING ABOVE
+           || ch == UnicodeChars::RingOperator; // ∘ RING OPERATOR
 }
 
 bool isExponent(const QChar& ch, int base)
@@ -2251,9 +2251,9 @@ static QString simplifyRepeatedBasesInMultiplicativeTermForDisplay(const QString
                         || ch == MathDsl::MulDotOp
                         || ch == MathDsl::MulCrossOp
                         || ch == MathDsl::DivOp
-                        || ch == QChar(0x00F7) // ÷
-                        || ch == QChar(0x29F8) // ⧸
-                        || ch == QChar(0x2215) // ∕
+                        || ch == UnicodeChars::DivisionSign // ÷
+                        || ch == UnicodeChars::BigSolidus // ⧸
+                        || ch == UnicodeChars::DivisionSlash // ∕
                         || ch == QLatin1Char('\\')))
                 {
                     outFactors->append(expr.mid(partStart, i - partStart));
@@ -2312,9 +2312,9 @@ static QString simplifyRepeatedBasesInMultiplicativeTermForDisplay(const QString
             auto isDivisionOp = [](const QString& opText) {
                 return opText == QLatin1String("/")
                     || opText == QLatin1String("\\")
-                    || opText == QString(QChar(0x00F7)) // ÷
-                    || opText == QString(QChar(0x29F8)) // ⧸
-                    || opText == QString(QChar(0x2215)); // ∕
+                    || opText == QString(UnicodeChars::DivisionSign) // ÷
+                    || opText == QString(UnicodeChars::BigSolidus) // ⧸
+                    || opText == QString(UnicodeChars::DivisionSlash); // ∕
             };
             const bool outerIsDiv =
                 isDivisionOp(outerOp);

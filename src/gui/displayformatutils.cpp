@@ -252,8 +252,8 @@ QString applyOperatorSpacingForDisplay(const QString& input)
             || ch == QLatin1Char('_')
             || ch == UnicodeChars::MicroSign
             || ch == UnicodeChars::GreekCapitalOmega
-            || ch == QChar(0x00B0) // °
-            || ch == QChar(0x207B) // ⁻
+            || ch == UnicodeChars::DegreeSign // °
+            || ch == MathDsl::PowNeg // ⁻
             || (ch.unicode() >= 0x2070 && ch.unicode() <= 0x2079) // ⁰..⁹
             || ch == QLatin1Char('(')
             || ch == QLatin1Char(')')
