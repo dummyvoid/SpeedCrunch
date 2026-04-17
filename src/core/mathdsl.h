@@ -22,6 +22,7 @@
 #include "core/unicodechars.h"
 
 #include <QChar>
+#include <QString>
 
 namespace MathDsl {
 
@@ -76,6 +77,7 @@ inline constexpr QChar OpenParen = UnicodeChars::LeftParenthesis;
 inline constexpr QChar CloseParen = UnicodeChars::RightParenthesis;
 inline constexpr QChar OpenUnit = UnicodeChars::LeftSquareBracket;
 inline constexpr QChar CloseUnit = UnicodeChars::RightSquareBracket;
+inline const QString TransOpAlt1 = QStringLiteral("in");
 inline constexpr QChar PowerDigits[] = { Pow0, Pow1, Pow2, Pow3, Pow4, Pow5, Pow6, Pow7, Pow8, Pow9 };
 inline constexpr QChar Digits[] = { Dig0, Dig1, Dig2, Dig3, Dig4, Dig5, Dig6, Dig7, Dig8, Dig9 };
 

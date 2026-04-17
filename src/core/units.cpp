@@ -198,7 +198,7 @@ namespace UnitSymbol {
     inline const QString Hertz = QStringLiteral("Hz");
     inline const QString Horsepower = QStringLiteral("hp");
     inline const QString Hour = QStringLiteral("h");
-    inline const QString Inch = QStringLiteral("in");
+    inline const QString Inch = MathDsl::TransOpAlt1;
     inline const QString Joule = QStringLiteral("J");
     inline const QString Karat = QStringLiteral("Kt");
     inline const QString Katal = QStringLiteral("kat");
