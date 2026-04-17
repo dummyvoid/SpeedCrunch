@@ -91,7 +91,7 @@ void cloneMenuActions(const QMenu* sourceMenu, QMenu* targetMenu)
 QString formatResultForClipboard(const Quantity& value)
 {
     QString textToCopy = NumberFormatter::format(value);
-    textToCopy.replace(UnicodeChars::MinusSign, QChar('-'));
+    textToCopy.replace(UnicodeChars::MinusSign, MathDsl::SubOpAlt1);
     return textToCopy;
 }
 

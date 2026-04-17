@@ -2058,7 +2058,7 @@ void MainWindow::copyResultToClipboard()
     QClipboard* cb = QApplication::clipboard();
     Quantity q = m_evaluator->getVariable(QLatin1String("ans")).value();
     QString strToCopy(NumberFormatter::format(q));
-    strToCopy.replace(UnicodeChars::MinusSign, QChar('-'));
+    strToCopy.replace(UnicodeChars::MinusSign, MathDsl::SubOpAlt1);
     cb->setText(strToCopy, QClipboard::Clipboard);
 }
 

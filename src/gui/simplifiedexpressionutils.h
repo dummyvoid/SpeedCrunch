@@ -46,7 +46,7 @@ inline bool isStandaloneSexagesimalTimeLiteral(const QString& expression)
     if (!allowedPattern.match(expression).hasMatch())
         return false;
 
-    const QString compact = expression.simplified().remove(QChar(' '));
+    const QString compact = expression.simplified().remove(UnicodeChars::Space);
     const int colonCount = compact.count(QLatin1Char(':'));
     if (colonCount < 1 || colonCount > 2)
         return false;

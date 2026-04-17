@@ -254,7 +254,7 @@ QString applyOperatorSpacingForDisplay(const QString& input)
             || ch == UnicodeChars::GreekCapitalOmega
             || ch == UnicodeChars::DegreeSign // °
             || ch == MathDsl::PowNeg // ⁻
-            || (ch.unicode() >= 0x2070 && ch.unicode() <= 0x2079) // ⁰..⁹
+            || MathDsl::isSuperscriptDigit(ch)
             || ch == QLatin1Char('(')
             || ch == QLatin1Char(')')
             || ch == QLatin1Char('[')
