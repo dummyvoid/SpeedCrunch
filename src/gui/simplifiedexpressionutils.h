@@ -55,7 +55,7 @@ inline bool isStandaloneSexagesimalTimeLiteral(const QString& expression)
 
     const QString withoutSign =
         (compact.startsWith(QLatin1Char('+'))
-         || compact.startsWith(QLatin1Char('-'))
+         || compact.startsWith(MathDsl::SubOpAlt1)
          || compact.startsWith(QChar(UnicodeChars::MinusSign)))
         ? compact.mid(1)
         : compact;

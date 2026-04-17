@@ -1130,7 +1130,7 @@ void Units::findUnit(Quantity& q)
                 superscript.reserve(exponent.size());
                 for (int i = 1; i < exponent.size(); ++i) {
                     const QChar ch = exponent.at(i);
-                    if (ch == QLatin1Char('-')) {
+                    if (ch == MathDsl::SubOpAlt1) {
                         superscript += MathDsl::PowNeg;
                     } else if (ch == QLatin1Char('+')) {
                         superscript += MathDsl::PowPos;

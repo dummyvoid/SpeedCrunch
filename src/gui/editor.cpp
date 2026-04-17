@@ -739,7 +739,7 @@ static bool rewriteTrailingSuperscriptExponentToParenthesizedAscii(Editor* edito
             continue;
         }
         if (ch == MathDsl::PowNeg) {
-            asciiExponent += QLatin1Char('-');
+            asciiExponent += MathDsl::SubOpAlt1;
             continue;
         }
         if (ch == MathDsl::PowPos) {
@@ -1029,7 +1029,7 @@ static Tokens scanForCompletionContext(Evaluator* evaluator,
                         negative = true;
                         continue;
                     }
-                    power += QLatin1Char('-');
+                    power += MathDsl::SubOpAlt1;
                     continue;
                 }
                 if (ch == MathDsl::PowPos) {
@@ -1042,9 +1042,9 @@ static Tokens scanForCompletionContext(Evaluator* evaluator,
             if (power.isEmpty())
                 continue;
             if (negative)
-                power = QStringLiteral("^(") + QLatin1Char('-') + power + QLatin1Char(')');
+                power = QString(MathDsl::PowOp) + MathDsl::OpenParen + MathDsl::SubOpAlt1 + power + MathDsl::CloseParen;
             else
-                power.prepend(QLatin1Char('^'));
+                power.prepend(MathDsl::PowOp);
 
             source.replace(i, j - i, power);
             i += power.size() - 1;

@@ -156,7 +156,7 @@ static void typeTextThroughEditorInputRules(Editor* editor, const QString& text)
         case '.': return Qt::Key_Period;
         case ',': return Qt::Key_Comma;
         case '+': return Qt::Key_Plus;
-        case '-': return Qt::Key_Minus;
+        case MathDsl::SubOpAlt1.unicode(): return Qt::Key_Minus;
         case '/': return Qt::Key_Slash;
         case '*': return Qt::Key_Asterisk;
         case '^': return Qt::Key_AsciiCircum;

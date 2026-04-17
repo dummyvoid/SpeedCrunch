@@ -40,7 +40,7 @@ static const constexpr auto COLOR_SCHEME_EXTENSION = "json";
 static QString textNormalizedForHighlighting(QString text)
 {
     static const QHash<QChar, QChar> superscriptToAscii {
-        {MathDsl::PowNeg, QLatin1Char('-')}, // ⁻ SUPERSCRIPT MINUS.
+        {MathDsl::PowNeg, MathDsl::SubOpAlt1}, // ⁻ SUPERSCRIPT MINUS.
         {MathDsl::Pow0, QLatin1Char('0')}, // ⁰
         {MathDsl::Pow1, QLatin1Char('1')}, // ¹
         {MathDsl::Pow2, QLatin1Char('2')}, // ²

@@ -346,7 +346,7 @@ inline bool isExpressionOperatorOrSeparator(const QChar& ch)
 inline bool isAnyOperator(const QChar& ch)
 {
     return ch == QLatin1Char('+')
-           || ch == QLatin1Char('-')
+           || ch == MathDsl::SubOpAlt1
            || ch == QLatin1Char('*')
            || ch == QLatin1Char('/')
            || ch == QLatin1Char('%')

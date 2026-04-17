@@ -653,7 +653,7 @@ static Token::Operator matchOperator(const QString& text)
             result = Token::Addition;
             break;
         case MathDsl::SubOp.unicode():
-        case '-':
+        case MathDsl::SubOpAlt1.unicode():
             result = Token::Subtraction;
             break;
         case MathDsl::MulCrossOp.unicode():
@@ -4326,7 +4326,7 @@ Tokens Evaluator::scan(const QString& expr) const
             } else if (tokenText.isEmpty() && (ch == '+' || isMinus(ch))) {
                 // Allow expressions like "$-10" or "$+10".
                 if (isMinus(ch))
-                    tokenText.append('-');
+                    tokenText.append(MathDsl::SubOpAlt1);
                 ++i;
             } else {
                 if (tokenText.endsWith("0")) {
@@ -4396,7 +4396,7 @@ Tokens Evaluator::scan(const QString& expr) const
 
             if (expText.length() == 1 && (ch == '+' || isMinus(ch))) {
                 // Possible + or - right after E.
-                expText.append(ch == MathDsl::SubOp ? '-' : ch);
+                expText.append(ch == MathDsl::SubOp ? MathDsl::SubOpAlt1 : ch);
                 ++i;
             } else if (isDigit) {
                 if (ch == '0') {
