@@ -54,8 +54,8 @@ inline QString normalizeMultiplicationOperators(QString text, bool keepDotOperat
 inline bool isDivisionOperatorAlias(const QChar& ch)
 {
     switch (ch.unicode()) {
-    case 0x002F: // / SOLIDUS
-    case 0x00F7: // ÷ DIVISION SIGN
+    case MathDsl::DivOp.unicode():
+    case UnicodeChars::DivisionSign.unicode():
         return true;
     default:
         return false;
@@ -83,7 +83,7 @@ inline QString normalizeDivisionOperatorsForEditorInput(QString text)
 inline bool isAdditionOperatorAlias(const QChar& ch)
 {
     switch (ch.unicode()) {
-    case 0xFF0B: // ＋ FULLWIDTH PLUS SIGN
+    case UnicodeChars::FullwidthPlusSign.unicode():
         return true;
     default:
         return false;
@@ -103,15 +103,15 @@ inline bool isSubtractionOperatorAlias(const QChar& ch)
 {
     switch (ch.unicode()) {
     case UnicodeChars::MinusSign.unicode():
-    case 0x002D: // - HYPHEN-MINUS
-    case 0x2010: // ‐ HYPHEN
-    case 0x2011: // ‑ NON-BREAKING HYPHEN
-    case 0x2013: // – EN DASH
-    case 0x2014: // — EM DASH
-    case 0x2015: // ― HORIZONTAL BAR
-    case 0x2043: // ⁃ HYPHEN BULLET
-    case 0xFE63: // ﹣ SMALL HYPHEN-MINUS
-    case 0xFF0D: // － FULLWIDTH HYPHEN-MINUS
+    case UnicodeChars::HyphenMinus.unicode():
+    case UnicodeChars::Hyphen.unicode():
+    case UnicodeChars::NonBreakingHyphen.unicode():
+    case UnicodeChars::EnDash.unicode():
+    case UnicodeChars::EmDash.unicode():
+    case UnicodeChars::HorizontalBar.unicode():
+    case UnicodeChars::HyphenBullet.unicode():
+    case UnicodeChars::SmallHyphenMinus.unicode():
+    case UnicodeChars::FullwidthHyphenMinus.unicode():
         return true;
     default:
         return false;
@@ -337,7 +337,7 @@ inline bool isExpressionOperatorOrSeparator(const QChar& ch)
            || ch == QLatin1Char('&')
            || ch == QLatin1Char('|')
            || ch == QLatin1Char('=')
-           || ch == QLatin1Char('>')
+           || ch == UnicodeChars::GreaterThanSign
            || ch == QLatin1Char('<')
            || ch == QLatin1Char(';')
            || ch == QLatin1Char(',');
@@ -355,7 +355,7 @@ inline bool isAnyOperator(const QChar& ch)
            || ch == QLatin1Char('|')
            || ch == QLatin1Char('=')
            || ch == QLatin1Char('<')
-           || ch == QLatin1Char('>')
+           || ch == UnicodeChars::GreaterThanSign
            || isAdditionOperatorAlias(ch)
            || isSubtractionOperatorAlias(ch)
            || isDivisionOperatorAlias(ch)

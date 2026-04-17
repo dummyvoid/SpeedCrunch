@@ -379,7 +379,7 @@ static bool s_isExpressionOperatorOrSeparator(const QChar& ch)
            || ch == QLatin1Char('&')
            || ch == QLatin1Char('|')
            || ch == QLatin1Char('=')
-           || ch == QLatin1Char('>')
+           || ch == UnicodeChars::GreaterThanSign
            || ch == QLatin1Char('<')
            || ch == MathDsl::OpenUnit
            || ch == MathDsl::CloseUnit
@@ -652,7 +652,7 @@ static Token::Operator matchOperator(const QString& text)
         case '+':
             result = Token::Addition;
             break;
-        case 0x2212: // − MINUS SIGN
+        case MathDsl::SubOp.unicode():
         case '-':
             result = Token::Subtraction;
             break;
@@ -661,8 +661,8 @@ static Token::Operator matchOperator(const QString& text)
         case '*':
             result = Token::Multiplication;
             break;
-        case 0x00F7: // ÷ DIVISION SIGN
-        case 0x29F8: // ⧸ BIG SOLIDUS
+        case UnicodeChars::DivisionSign.unicode():
+        case UnicodeChars::BigSolidus.unicode():
         case '/':
             result = Token::Division;
             break;
@@ -720,7 +720,7 @@ static Token::Operator matchOperator(const QString& text)
         else if (text == ">>")
           result = Token::ArithmeticRightShift;
         else if (text == "->"
-                 || (text.at(0).unicode() == 0x2212 && text.at(1) == QLatin1Char('>'))
+                 || (text.at(0) == MathDsl::SubOp && text.at(1) == UnicodeChars::GreaterThanSign)
                  || text.compare(QStringLiteral("in"), Qt::CaseInsensitive) == 0)
             result = Token::UnitConversion;
     }
@@ -2933,7 +2933,7 @@ static QString formatInterpretedExpressionForDisplayImpl(const QString& expressi
                         || ch == QLatin1Char('=')
                         || ch == QLatin1Char('?')
                         || ch == QLatin1Char('<')
-                        || ch == QLatin1Char('>')) {
+                        || ch == UnicodeChars::GreaterThanSign) {
                     return true;
                 }
                 if ((ch == MathDsl::SubOpAlt1 || ch == MathDsl::SubOp) && i > 0)
@@ -3557,7 +3557,8 @@ void Tokens::append(const Token& token)
 
 static bool isSubscriptDigit(QChar ch)
 {
-    return ch.unicode() >= 0x2080 && ch.unicode() <= 0x2089;
+    return ch.unicode() >= UnicodeChars::SubscriptZero.unicode()
+        && ch.unicode() <= UnicodeChars::SubscriptNine.unicode();
 }
 
 static QString superscriptDigitsToAscii(const QString& text)
@@ -3574,28 +3575,28 @@ static QString superscriptDigitsToAscii(const QString& text)
 static bool isSubscriptLetter(QChar ch)
 {
     switch (ch.unicode()) {
-    case 0x2090: // ₐ
-    case 0x2091: // ₑ
-    case 0x2092: // ₒ
-    case 0x2093: // ₓ
-    case 0x2094: // ₔ
-    case 0x2095: // ₕ
-    case 0x2096: // ₖ
-    case 0x2097: // ₗ
-    case 0x2098: // ₘ
-    case 0x2099: // ₙ
-    case 0x209A: // ₚ
-    case 0x209B: // ₛ
-    case 0x209C: // ₜ
-    case 0x1D62: // ᵢ
-    case 0x1D63: // ᵣ
-    case 0x1D64: // ᵤ
-    case 0x1D65: // ᵥ
-    case 0x1D66: // ᵦ
-    case 0x1D67: // ᵧ
-    case 0x1D68: // ᵨ
-    case 0x1D69: // ᵩ
-    case 0x1D6A: // ᵪ
+    case UnicodeChars::LatinSubscriptSmallLetterA.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterE.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterO.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterX.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterSchwa.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterH.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterK.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterL.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterM.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterN.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterP.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterS.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterT.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterI.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterR.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterU.unicode():
+    case UnicodeChars::LatinSubscriptSmallLetterV.unicode():
+    case UnicodeChars::GreekSubscriptSmallLetterBeta.unicode():
+    case UnicodeChars::GreekSubscriptSmallLetterGamma.unicode():
+    case UnicodeChars::GreekSubscriptSmallLetterRho.unicode():
+    case UnicodeChars::GreekSubscriptSmallLetterPhi.unicode():
+    case UnicodeChars::GreekSubscriptSmallLetterChi.unicode():
         return true;
     default:
         return false;

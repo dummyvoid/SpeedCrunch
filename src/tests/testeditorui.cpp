@@ -585,7 +585,7 @@ void TestEditorUi::does_not_insert_implicit_mul_for_zero_radix_prefix_letters()
 void TestEditorUi::allows_unit_conversion_tail_after_spaced_subtraction_operator()
 {
     // State: "1", then subtraction operator formatting.
-    // Action: type '>' via text-based key event.
+    // Action: type GreaterThanSign via text-based key event.
     // Expected: convert to spaced "→ []", cursor inside brackets, parser sees UnitConversion.
     Editor editor;
     editor.show();
@@ -599,7 +599,8 @@ void TestEditorUi::allows_unit_conversion_tail_after_spaced_subtraction_operator
     const QString afterMinus = editor.document()->toRawText();
     QVERIFY(afterMinus.contains(MathDsl::SubOp));
 
-    QKeyEvent greaterByText(QEvent::KeyPress, Qt::Key_unknown, Qt::NoModifier, QStringLiteral(">"));
+    QKeyEvent greaterByText(
+        QEvent::KeyPress, Qt::Key_unknown, Qt::NoModifier, QString(UnicodeChars::GreaterThanSign));
     QApplication::sendEvent(&editor, &greaterByText);
 
     const QString afterGreater = editor.document()->toRawText();
@@ -609,7 +610,7 @@ void TestEditorUi::allows_unit_conversion_tail_after_spaced_subtraction_operator
         + QString(MathDsl::SubWrap)
         + QStringLiteral("[]");
     QVERIFY(afterGreater.contains(arrowSequence));
-    QVERIFY(!afterGreater.contains(QLatin1Char('>')));
+    QVERIFY(!afterGreater.contains(UnicodeChars::GreaterThanSign));
     QCOMPARE(editor.textCursor().position(), afterGreater.size() - 1);
 
     const Tokens tokens = Evaluator::instance()->scan(afterGreater);

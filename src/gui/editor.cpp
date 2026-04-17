@@ -393,10 +393,10 @@ static bool isCaretOperatorAlias(const QChar& ch)
     // Caret may arrive as ASCII '^' or as layout/IME-specific variants
     // (for example PT dead-key composition). Keep them equivalent here.
     switch (ch.unicode()) {
-    case 0x005E: // ^ CIRCUMFLEX ACCENT
-    case 0x02C6: // ˆ MODIFIER LETTER CIRCUMFLEX ACCENT
-    case 0x2038: // ‸ CARET
-    case 0xFF3E: // ＾ FULLWIDTH CIRCUMFLEX ACCENT
+    case UnicodeChars::CircumflexAccent.unicode():
+    case UnicodeChars::ModifierLetterCircumflexAccent.unicode():
+    case UnicodeChars::Caret.unicode():
+    case UnicodeChars::FullwidthCircumflexAccent.unicode():
         return true;
     default:
         return false;
@@ -2811,7 +2811,7 @@ void Editor::keyPressEvent(QKeyEvent* event)
             return ch == QLatin1Char('(') || ch.isLetter() || ch.isDigit() || isCurrencySymbolChar(ch);
         };
 
-        if (typedForRules == QLatin1Char('>')
+        if (typedForRules == UnicodeChars::GreaterThanSign
             && EditorUtils::isSubtractionOperatorAlias(prev)) {
             replacePreviousSubtractionAtCursorWithUnitConversion(this);
             event->accept();
@@ -2828,7 +2828,7 @@ void Editor::keyPressEvent(QKeyEvent* event)
             || EditorUtils::isDivisionOperatorAlias(prev)) {
             const bool isUnitConversionTail =
                 EditorUtils::isSubtractionOperatorAlias(prev)
-                && typedForRules == QLatin1Char('>');
+                && typedForRules == UnicodeChars::GreaterThanSign;
             if (!isOpenParenLetterDigitOrCurrency(typedForRules)
                 && !isUnitConversionTail) {
                 event->accept();
