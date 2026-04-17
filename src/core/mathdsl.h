@@ -35,6 +35,7 @@ inline constexpr QChar TransOp = UnicodeChars::RightwardsArrow;
 inline constexpr QChar PowOp = UnicodeChars::CircumflexAccent;
 inline constexpr QChar TimeSep = UnicodeChars::Colon;
 inline constexpr QChar AddOp = UnicodeChars::PlusSign;
+inline constexpr QChar Equals = UnicodeChars::EqualsSign;
 inline constexpr QChar SubOp = UnicodeChars::MinusSign;
 inline constexpr QChar SubOpAlt1 = UnicodeChars::HyphenMinus;
 inline constexpr QChar Deg = UnicodeChars::DegreeSign;

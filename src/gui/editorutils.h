@@ -277,7 +277,7 @@ inline QString adjustedTypedTextForImplicitMultiplicationAfterDigit(
         const QChar sign = useDotSign ? MathDsl::MulDotOp : MathDsl::MulCrossOp;
         const QChar space = useDotSign ? MathDsl::MulDotWrap : MathDsl::MulCrossWrap;
         operatorPrefix = QString(space) + QString(sign) + QString(space);
-    } else if (typed == QLatin1Char('=')) {
+    } else if (typed == MathDsl::Equals) {
         if (!leftNonSpaceSupportsOperatorInsertion())
             return typedText;
         operatorPrefix = QStringLiteral(" = ");
@@ -336,7 +336,7 @@ inline bool isExpressionOperatorOrSeparator(const QChar& ch)
            || ch == QLatin1Char('^')
            || ch == QLatin1Char('&')
            || ch == QLatin1Char('|')
-           || ch == QLatin1Char('=')
+           || ch == MathDsl::Equals
            || ch == UnicodeChars::GreaterThanSign
            || ch == QLatin1Char('<')
            || ch == QLatin1Char(';')
@@ -353,7 +353,7 @@ inline bool isAnyOperator(const QChar& ch)
            || ch == QLatin1Char('^')
            || ch == QLatin1Char('&')
            || ch == QLatin1Char('|')
-           || ch == QLatin1Char('=')
+           || ch == MathDsl::Equals
            || ch == QLatin1Char('<')
            || ch == UnicodeChars::GreaterThanSign
            || isAdditionOperatorAlias(ch)

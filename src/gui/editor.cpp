@@ -133,7 +133,7 @@ static bool isGroupedSpacedOperator(QChar leftSpace, QChar sign, QChar rightSpac
            || matches(MathDsl::AddWrap, MathDsl::AddOp)
            || matches(MathDsl::SubWrap, MathDsl::SubOp)
            || matches(MathDsl::DivWrap, MathDsl::DivOp)
-           || matches(QLatin1Char(' '), QLatin1Char('='))
+           || matches(QLatin1Char(' '), MathDsl::Equals)
            || matches(MathDsl::SubWrap, MathDsl::TransOp)
            || matches(QLatin1Char(' '), QLatin1Char('?'));
 }
@@ -287,7 +287,7 @@ static QChar normalizedTypedCharFromEvent(const QKeyEvent* event, const QString&
     switch (event->key()) {
     case Qt::Key_Plus: return MathDsl::AddOp;
     case Qt::Key_Equal:
-        return (event->modifiers() & Qt::ShiftModifier) ? MathDsl::AddOp : QLatin1Char('=');
+        return (event->modifiers() & Qt::ShiftModifier) ? MathDsl::AddOp : MathDsl::Equals;
     case Qt::Key_Minus: return MathDsl::SubOp;
     case Qt::Key_Slash: return MathDsl::DivOp;
     case Qt::Key_Asterisk: return MathDsl::MulCrossOp;
@@ -1929,7 +1929,7 @@ void Editor::autoCalc()
             const Settings* settings = Settings::instance();
             if (settings->simplifyResultExpressions
                 && !simplifiedLine.isEmpty()
-                && !interpretedExpr.contains(QLatin1Char('='))) {
+                && !interpretedExpr.contains(MathDsl::Equals)) {
                 const QString simplifiedInterpretedExpr =
                     Evaluator::simplifyInterpretedExpression(interpretedExpr);
                 m_evaluator->setExpression(simplifiedInterpretedExpr);
@@ -3280,7 +3280,7 @@ void Editor::keyPressEvent(QKeyEvent* event)
                 || EditorUtils::isDivisionOperatorAlias(prev)
                 || isAnyMultiplicationOperator(prev)
                 || prev == QLatin1Char('^')
-                || prev == QLatin1Char('=')) {
+                || prev == MathDsl::Equals) {
                 event->accept();
                 return;
             }

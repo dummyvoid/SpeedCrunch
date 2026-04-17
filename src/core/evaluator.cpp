@@ -269,7 +269,7 @@ static bool splitUserFunctionDescription(const QString& expression,
                                          QString* expressionWithoutDescription,
                                          QString* description)
 {
-    const int equalsPos = expression.indexOf('=');
+    const int equalsPos = expression.indexOf(MathDsl::Equals);
     if (equalsPos < 0)
         return false;
 
@@ -299,7 +299,7 @@ static bool splitVariableDescription(const QString& expression,
                                      QString* expressionWithoutDescription,
                                      QString* description)
 {
-    const int equalsPos = expression.indexOf('=');
+    const int equalsPos = expression.indexOf(MathDsl::Equals);
     if (equalsPos < 0)
         return false;
 
@@ -378,7 +378,7 @@ static bool s_isExpressionOperatorOrSeparator(const QChar& ch)
            || ch == MathDsl::PowOp
            || ch == QLatin1Char('&')
            || ch == QLatin1Char('|')
-           || ch == QLatin1Char('=')
+           || ch == MathDsl::Equals
            || ch == UnicodeChars::GreaterThanSign
            || ch == QLatin1Char('<')
            || ch == MathDsl::OpenUnit
@@ -690,7 +690,7 @@ static Token::Operator matchOperator(const QString& text)
         case '%':
             result = Token::Percent;
             break;
-        case '=':
+        case MathDsl::Equals.unicode():
             result = Token::Assignment;
             break;
         case '\\':
@@ -2930,7 +2930,7 @@ static QString formatInterpretedExpressionForDisplayImpl(const QString& expressi
                         || ch == QLatin1Char('&')
                         || ch == QLatin1Char('|')
                         || ch == QLatin1Char(';')
-                        || ch == QLatin1Char('=')
+                        || ch == MathDsl::Equals
                         || ch == QLatin1Char('?')
                         || ch == QLatin1Char('<')
                         || ch == UnicodeChars::GreaterThanSign) {
@@ -6344,7 +6344,7 @@ Quantity Evaluator::eval()
                 if (interpretedBody.startsWith(leftSide))
                     interpretedBody = interpretedBody.mid(leftSide.size());
                 else {
-                    const int assignmentPos = interpretedBody.indexOf('=');
+                    const int assignmentPos = interpretedBody.indexOf(MathDsl::Equals);
                     if (assignmentPos >= 0)
                         interpretedBody = interpretedBody.mid(assignmentPos + 1);
                 }

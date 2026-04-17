@@ -189,7 +189,7 @@ struct AssignmentTarget {
 bool splitUserFunctionDescriptionForImport(const QString& expression,
                                            QString* expressionWithoutDescription)
 {
-    const int equalsPos = expression.indexOf('=');
+    const int equalsPos = expression.indexOf(MathDsl::Equals);
     if (equalsPos < 0)
         return false;
 
