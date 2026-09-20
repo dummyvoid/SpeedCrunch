@@ -1,0 +1,45 @@
+name: Build Windows Executable
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # 支援在 GitHub 網頁手動點擊觸發編譯
+
+jobs:
+  build-windows:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install MinGW and Qt5 for Windows
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            g++-mingw-w64-x86-64 \
+            qttools5-dev-tools \
+            qtbase5-dev-tools \
+            cmake \
+            ninja-build \
+            zip
+
+      - name: Configure and Build
+        run: |
+          mkdir build && cd build
+          # 使用 CMake 生成 Windows 目標專案
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build . --config Release
+
+      - name: Package Executable
+        run: |
+          mkdir release_pkg
+          # 尋找編譯出的 exe 並打包 (請依據實際生成的路徑調整)
+          find build -name "*.exe" -exec cp {} release_pkg/ \;
+          cd release_pkg && zip -r ../SpeedCrunch-Windows.zip .
+
+      - name: Upload Windows Executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedCrunch-Windows-Exe
+          path: SpeedCrunch-Windows.zip
