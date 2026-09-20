@@ -36,6 +36,7 @@
         <file>locale/uz_Latn_UZ.qm</file>
         <file>locale/vi.qm</file>
         <file>locale/zh_CN.qm</file>
+        <file>locale/zh_TW.qm</file>
         <file>color-schemes/Terminal.json</file>
         <file>color-schemes/Tomorrow.json</file>
         <file>color-schemes/Tomorrow Night.json</file>
