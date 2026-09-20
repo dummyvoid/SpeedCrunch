@@ -25,10 +25,10 @@ jobs:
           target: 'desktop'
           arch: 'win64_msvc2019_64'
 
-      # 3. 配置與編譯 (指定原始碼目錄為 src)
+      # 3. 配置與編譯 (加入 -DCMAKE_POLICY_VERSION_MINIMUM=3.5 解決舊版 CMakeLists 限制)
       - name: Configure and Build
         run: |
-          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
+          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5
           cmake --build build --config Release
 
       # 4. 打包可執行檔與 Qt DLL 檔
