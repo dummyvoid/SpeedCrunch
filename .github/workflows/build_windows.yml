@@ -3,43 +3,52 @@ name: Build Windows Executable
 on:
   push:
     branches: [ "main", "master" ]
-  workflow_dispatch: # 支援在 GitHub 網頁手動點擊觸發編譯
+  workflow_dispatch:
 
 jobs:
   build-windows:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install MinGW and Qt5 for Windows
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            g++-mingw-w64-x86-64 \
-            qttools5-dev-tools \
-            qtbase5-dev-tools \
-            cmake \
-            ninja-build \
-            zip
+      # 1. 設定 MSVC 開發者環境
+      - name: Setup MSVC developer environment
+        uses: ilammy/msvc-dev-cmd@v1
 
+      # 2. 安裝 Qt 5.15
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+
+      # 3. 配置與編譯 (指定原始碼目錄為 src)
       - name: Configure and Build
         run: |
-          mkdir build && cd build
-          # 使用 CMake 生成 Windows 目標專案
-          cmake .. -DCMAKE_BUILD_TYPE=Release
-          cmake --build . --config Release
+          cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --config Release
 
+      # 4. 打包可執行檔與 Qt DLL 檔
       - name: Package Executable
+        shell: powershell
         run: |
-          mkdir release_pkg
-          # 尋找編譯出的 exe 並打包 (請依據實際生成的路徑調整)
-          find build -name "*.exe" -exec cp {} release_pkg/ \;
-          cd release_pkg && zip -r ../SpeedCrunch-Windows.zip .
+          New-Item -ItemType Directory -Path release_pkg
+          $exePath = Get-ChildItem -Path build -Filter "speedcrunch.exe" -Recurse | Select-Object -First 1
+          if ($exePath) {
+              Copy-Item $exePath.FullName -Destination release_pkg\
+          } else {
+              Write-Error "Could not find speedcrunch.exe in build directory."
+              exit 1
+          }
+          windeployqt release_pkg\speedcrunch.exe
+          Compress-Archive -Path release_pkg\* -DestinationPath SpeedCrunch-Windows.zip
 
+      # 5. 上傳為 Artifact 供下載
       - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
-          name: SpeedCrunch-Windows-Exe
+          name: SpeedCrunch-Windows-MSVC
           path: SpeedCrunch-Windows.zip
