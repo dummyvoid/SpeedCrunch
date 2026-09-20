@@ -25,13 +25,23 @@ jobs:
           target: 'desktop'
           arch: 'win64_msvc2019_64'
 
-      # 3. 配置與編譯 (使用雙引號包覆 POLICY 參數並指定根目錄)
+      # 3. 自動判斷 CMakeLists.txt 路徑並配置編譯
       - name: Configure and Build
+        shell: powershell
         run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+          $sourceDir = "."
+          if (Test-Path "src\CMakeLists.txt") {
+              $sourceDir = "src"
+          } elseif (-not (Test-Path "CMakeLists.txt")) {
+              Write-Error "Could not find CMakeLists.txt in root or src directory."
+              exit 1
+          }
+          
+          # 執行 CMake 配置與編譯
+          cmake -S $sourceDir -B build -DCMAKE_BUILD_TYPE=Release "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
           cmake --build build --config Release
 
-      # 4. 打包可執行檔與 Qt DLL 檔
+      # 4. 打包可執行檔與 Qt 依賴 DLL
       - name: Package Executable
         shell: powershell
         run: |
@@ -46,7 +56,7 @@ jobs:
           windeployqt release_pkg\speedcrunch.exe
           Compress-Archive -Path release_pkg\* -DestinationPath SpeedCrunch-Windows.zip
 
-      # 5. 上傳為 Artifact 供下載
+      # 5. 上傳檔供下載
       - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
