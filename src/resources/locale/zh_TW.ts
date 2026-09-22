@@ -7,7 +7,7 @@
         <location filename="../../gui/aboutbox.cpp" line="35"/>
         <location filename="../../gui/aboutbox.cpp" line="151"/>
         <source>About SpeedCrunch</source>
-        <translation>關於 SpeedCrunch</translation>
+        <translation>關於SpeedCrunch</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="46"/>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="120"/>
         <source>Copyright (C) 2004-2016 The SpeedCrunch developers</source>
-        <translation>版權所有 (C) 2004-2016 SpeedCrunch 開發團隊</translation>
+        <translation>版權所有(C) 2004-2016 SpeedCrunc發團隊</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="143"/>
@@ -47,12 +47,12 @@
     <message>
         <location filename="../../gui/aboutbox.cpp" line="124"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version</source>
-        <translation>本程式為自由軟體；您可以自由軟體基金會所發佈的 GNU 通用公共授權條款（GPL）第二版或（由您選擇）更新版本之條款下，重製及/或修改本程式。</translation>
+        <translation>本程式為自由軟體；您可以自由軟體基金會所發佈的GN用公共授權條款（GPL）第二版或（由您選擇）更新版本之條款下，重製及/或修改本程式。</translation>
     </message>
     <message>
         <location filename="../../gui/aboutbox.cpp" line="130"/>
         <source>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.</source>
-        <translation>發佈本程式是希望它能有所幫助，但不提供任何擔保；甚至不包含對適售性或特定目的適用性的隱含保證。詳情請參閱 GNU 通用公共授權條款。</translation>
+        <translation>發佈本程式是希望它能有所幫助，但不提供任何擔保；甚至不包含對適售性或特定目的適用性的隱含保證。詳情請參閱GN用公共授權條款。</translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@
         <location filename="../../core/book.cpp" line="102"/>
         <location filename="../../core/book.cpp" line="329"/>
         <source>Radio Frequency</source>
-        <translation>射頻 (RF)</translation>
+        <translation>射頻(RF)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="103"/>
@@ -176,13 +176,13 @@
         <location filename="../../core/book.cpp" line="104"/>
         <location filename="../../core/book.cpp" line="344"/>
         <source>Characteristic Impedance (coax)</source>
-        <translation>特性阻抗 (同軸)</translation>
+        <translation>特性阻抗(同軸)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="105"/>
         <location filename="../../core/book.cpp" line="359"/>
         <source>Velocity of Propagation (coax)</source>
-        <translation>傳播速度 (同軸)</translation>
+        <translation>傳播速度(同軸)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="106"/>
@@ -327,7 +327,7 @@
     <message>
         <location filename="../../core/book.cpp" line="300"/>
         <source>central angle (degrees)</source>
-        <translation>圓心角 (度)</translation>
+        <translation>圓心角(度)</translation>
     </message>
     <message>
         <location filename="../../core/book.cpp" line="424"/>
@@ -395,7 +395,7 @@
     <message>
         <location filename="../../core/book.cpp" line="408"/>
         <source>frequency (Hz)</source>
-        <translation>頻率 (Hz)</translation>
+        <translation>頻率(Hz)</translation>
     </message>
 </context>
 <context>
@@ -426,12 +426,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="562"/>
         <source>Archimedes&apos; constant Pi</source>
-        <translation>圓周率 Pi</translation>
+        <translation>圓周率Pi</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="563"/>
         <source>Euler&apos;s number</source>
-        <translation>自然對數底數 (歐拉數)</translation>
+        <translation>自然對數底數(歐拉數)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="564"/>
@@ -451,12 +451,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="570"/>
         <source>Dirac&apos;s Constant</source>
-        <translation>狄拉克常數 (約化普朗克常數)</translation>
+        <translation>狄拉克常數(約化普朗克常數)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="571"/>
         <source>Electric Constant</source>
-        <translation>介電常數 (真空電容率)</translation>
+        <translation>介電常數(真空電容率)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="572"/>
@@ -466,7 +466,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="573"/>
         <source>Magnetic Constant</source>
-        <translation>磁常數 (真空導磁率)</translation>
+        <translation>磁常數(真空導磁率)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="574"/>
@@ -571,7 +571,7 @@
     <message>
         <location filename="../../core/constants.cpp" line="601"/>
         <source>Hartree Energy in eV</source>
-        <translation>哈特里能量 (eV)</translation>
+        <translation>哈特里能量(eV)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="602"/>
@@ -656,12 +656,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="621"/>
         <source>Loschmidt constant (273.15 K, 100 kPa)</source>
-        <translation>洛施密特常數 (273.15 K, 100 kPa)</translation>
+        <translation>洛施密特常數(273.15 K, 100 kPa)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="622"/>
         <source>Loschmidt constant (273.15 K, 101.325 kPa)</source>
-        <translation>洛施密特常數 (273.15 K, 101.325 kPa)</translation>
+        <translation>洛施密特常數(273.15 K, 101.325 kPa)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="623"/>
@@ -1226,12 +1226,12 @@
     <message>
         <location filename="../../core/constants.cpp" line="750"/>
         <source>W-Boson Mass</source>
-        <translation>W 玻色子質量</translation>
+        <translation>色子質量</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="751"/>
         <source>Z-Boson Mass</source>
-        <translation>Z 玻色子質量</translation>
+        <translation>色子質量</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="752"/>
@@ -1251,17 +1251,17 @@
     <message>
         <location filename="../../core/constants.cpp" line="755"/>
         <source>Electron Mass (SI)</source>
-        <translation>電子質量 (SI)</translation>
+        <translation>電子質量(SI)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="756"/>
         <source>Proton Mass (SI)</source>
-        <translation>質子質量 (SI)</translation>
+        <translation>質子質量(SI)</translation>
     </message>
     <message>
         <location filename="../../core/constants.cpp" line="757"/>
         <source>Neutron Mass (SI)</source>
-        <translation>中子質量 (SI)</translation>
+        <translation>中子質量(SI)</translation>
     </message>
 </context>
 <context>
@@ -1421,25 +1421,25 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="66"/>
         <source>cannot operate on a NaN</source>
-        <translation>無法對 NaN (非數值) 進行操作</translation>
+        <translation>無法對NaN (非數值行操作</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="69"/>
         <location filename="../../core/evaluator.cpp" line="121"/>
         <source>underflow - tiny result is out of SpeedCrunch&apos;s number range</source>
-        <translation>下溢出 - 結果過小，已超出 SpeedCrunch 的數值範圍</translation>
+        <translation>下溢出 - 結果過小，已超出SpeedCrunc數值範圍</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="72"/>
         <location filename="../../core/evaluator.cpp" line="118"/>
         <source>overflow - huge result is out of SpeedCrunch&apos;s number range</source>
-        <translation>上溢出 - 結果過大，已超出 SpeedCrunch 的數值範圍</translation>
+        <translation>上溢出 - 結果過大，已超出SpeedCrunc數值範圍</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="78"/>
         <location filename="../../core/evaluator.cpp" line="124"/>
         <source>overflow - logic result exceeds maximum of 256 bits</source>
-        <translation>上溢出 - 邏輯運算結果超過 256 位元上限</translation>
+        <translation>上溢出 - 邏輯運算結果超過25元上限</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="81"/>
@@ -1455,7 +1455,7 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="115"/>
         <source>does not take NaN as an argument</source>
-        <translation>不接受以 NaN (非數值) 作為引數</translation>
+        <translation>不接受以NaN (非數值為引數</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="127"/>
@@ -1475,28 +1475,28 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="151"/>
         <source>internal error, please report a bug</source>
-        <translation>內部錯誤，請回報 Bug</translation>
+        <translation>內部錯誤，請回報Bug</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="1843"/>
         <location filename="../../core/evaluator.cpp" line="1864"/>
         <source>%1 is a reserved name, please choose another</source>
-        <translation>%1 為保留名稱，請選擇其他名稱</translation>
+        <translation>%保留名稱，請選擇其他名稱</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="1850"/>
         <source>%1 is a variable name, please choose another or delete the variable</source>
-        <translation>%1 為變數名稱，請選擇其他名稱或刪除該變數</translation>
+        <translation>%變數名稱，請選擇其他名稱或刪除該變數</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="1859"/>
         <source>argument %1 is used more than once</source>
-        <translation>引數 %1 被重複使用</translation>
+        <translation>引數%重複使用</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="1880"/>
         <source>%1 is a user function name, please choose another or delete the function</source>
-        <translation>%1 為使用者定義函數名稱，請選擇其他名稱或刪除該函數</translation>
+        <translation>%使用者定義函數名稱，請選擇其他名稱或刪除該函數</translation>
     </message>
 </context>
 <context>
@@ -1542,7 +1542,7 @@
         <location filename="../../core/functions.cpp" line="1058"/>
         <location filename="../../core/functions.cpp" line="1059"/>
         <source>x; exponent_bits; significand_bits [; exponent_bias]</source>
-        <translation>x; 指數位元數; 有效數位元數 [; 指數偏置]</translation>
+        <translation>x; 指數位元數; 有效數位元數[; 指數偏置]</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1060"/>
@@ -1592,47 +1592,47 @@
     <message>
         <location filename="../../core/functions.cpp" line="1077"/>
         <source>Arc Cosine</source>
-        <translation>反餘弦 (arccos)</translation>
+        <translation>反餘弦(arccos)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1078"/>
         <source>Logical AND</source>
-        <translation>邏輯與 (AND)</translation>
+        <translation>邏輯與(AND)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1079"/>
         <source>Area Hyperbolic Cosine</source>
-        <translation>反雙曲餘弦 (arccosh)</translation>
+        <translation>反雙曲餘弦(arccosh)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1080"/>
         <source>Area Hyperbolic Sine</source>
-        <translation>反雙曲正弦 (arcsinh)</translation>
+        <translation>反雙曲正弦(arcsinh)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1081"/>
         <source>Area Hyperbolic Tangent</source>
-        <translation>反雙曲正切 (arctanh)</translation>
+        <translation>反雙曲正切(arctanh)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1082"/>
         <source>Arc Sine</source>
-        <translation>反正弦 (arcsin)</translation>
+        <translation>反正弦(arcsin)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1083"/>
         <source>Arc Tangent</source>
-        <translation>反正切 (arctan)</translation>
+        <translation>反正切(arctan)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1084"/>
         <source>Arc Tangent with two Arguments</source>
-        <translation>雙引數反正切 (atan2)</translation>
+        <translation>雙引數反正切(atan2)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1085"/>
         <source>Average (Arithmetic Mean)</source>
-        <translation>平均值 (算術平均數)</translation>
+        <translation>平均值(算術平均數)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1087"/>
@@ -1667,52 +1667,52 @@
     <message>
         <location filename="../../core/functions.cpp" line="1093"/>
         <source>Ceiling</source>
-        <translation>無條件進位 (Ceiling)</translation>
+        <translation>無條件進位(Ceiling)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1094"/>
         <source>Cosine</source>
-        <translation>餘弦 (cos)</translation>
+        <translation>餘弦(cos)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1095"/>
         <source>Hyperbolic Cosine</source>
-        <translation>雙曲餘弦 (cosh)</translation>
+        <translation>雙曲餘弦(cosh)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1096"/>
         <source>Cotangent</source>
-        <translation>餘切 (cot)</translation>
+        <translation>餘切(cot)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1097"/>
         <source>Cosecant</source>
-        <translation>餘割 (csc)</translation>
+        <translation>餘割(csc)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1099"/>
         <source>Degrees of Arc</source>
-        <translation>角度 (度)</translation>
+        <translation>角度(度)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1100"/>
         <source>Error Function</source>
-        <translation>誤差函數 (erf)</translation>
+        <translation>誤差函數(erf)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1101"/>
         <source>Complementary Error Function</source>
-        <translation>互補誤差函數 (erfc)</translation>
+        <translation>互補誤差函數(erfc)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1102"/>
         <source>Exponential</source>
-        <translation>指數函數 (exp)</translation>
+        <translation>指數函數(exp)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1103"/>
         <source>Floor</source>
-        <translation>無條件捨去 (Floor)</translation>
+        <translation>無條件捨去(Floor)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1104"/>
@@ -1722,12 +1722,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1105"/>
         <source>Extension of Factorials [= (x-1)!]</source>
-        <translation>階乘延伸 Gamma 函數 [= (x-1)!]</translation>
+        <translation>階乘延伸Gamm數[= (x-1)!]</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1106"/>
         <source>Greatest Common Divisor</source>
-        <translation>最大公因數 (GCD)</translation>
+        <translation>最大公因數(GCD)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1107"/>
@@ -1772,67 +1772,67 @@
     <message>
         <location filename="../../core/functions.cpp" line="1116"/>
         <source>Decode IEEE-754 Binary Value</source>
-        <translation>解碼 IEEE-754 二進位數值</translation>
+        <translation>解碼IEEE-75進位數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1117"/>
         <source>Encode IEEE-754 Binary Value</source>
-        <translation>編碼 IEEE-754 二進位數值</translation>
+        <translation>編碼IEEE-75進位數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1118"/>
         <source>Decode 16-bit Half-Precision Value</source>
-        <translation>解碼 16 位元半精度數值</translation>
+        <translation>解碼1元半精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1119"/>
         <source>Encode 16-bit Half-Precision Value</source>
-        <translation>編碼 16 位元半精度數值</translation>
+        <translation>編碼1元半精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1120"/>
         <source>Decode 32-bit Single-Precision Value</source>
-        <translation>解碼 32 位元單精度數值</translation>
+        <translation>解碼3元單精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1121"/>
         <source>Encode 32-bit Single-Precision Value</source>
-        <translation>編碼 32 位元單精度數值</translation>
+        <translation>編碼3元單精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1122"/>
         <source>Decode 64-bit Double-Precision Value</source>
-        <translation>解碼 64 位元雙精度數值</translation>
+        <translation>解碼6元雙精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1123"/>
         <source>Encode 64-bit Double-Precision Value</source>
-        <translation>編碼 64 位元雙精度數值</translation>
+        <translation>編碼6元雙精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1124"/>
         <source>Decode 128-bit Quad-Precision Value</source>
-        <translation>解碼 128 位元四倍精度數值</translation>
+        <translation>解碼12元四倍精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1125"/>
         <source>Encode 128-bit Quad-Precision Value</source>
-        <translation>編碼 128 位元四倍精度數值</translation>
+        <translation>編碼12元四倍精度數值</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1126"/>
         <source>Binary Logarithm</source>
-        <translation>二進位對數 (log2)</translation>
+        <translation>二進位對數(log2)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1127"/>
         <source>Common Logarithm</source>
-        <translation>常用對數 (log10)</translation>
+        <translation>常用對數(log10)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1128"/>
         <source>Natural Logarithm</source>
-        <translation>自然對數 (ln)</translation>
+        <translation>自然對數(ln)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1130"/>
@@ -1852,7 +1852,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1133"/>
         <source>Median Value (50th Percentile)</source>
-        <translation>中位數 (第 50 百分位數)</translation>
+        <translation>中位數(第5分位數)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1134"/>
@@ -1862,17 +1862,17 @@
     <message>
         <location filename="../../core/functions.cpp" line="1135"/>
         <source>Modulo</source>
-        <translation>取模 (余數)</translation>
+        <translation>取模(余數)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1136"/>
         <source>Combination (Binomial Coefficient)</source>
-        <translation>組合 (二項式係數)</translation>
+        <translation>組合(二項式係數)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1137"/>
         <source>Logical NOT</source>
-        <translation>邏輯非 (NOT)</translation>
+        <translation>邏輯非(NOT)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1138"/>
@@ -1902,12 +1902,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1140"/>
         <source>Logical OR</source>
-        <translation>邏輯或 (OR)</translation>
+        <translation>邏輯或(OR)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1141"/>
         <source>Phase of Complex Number</source>
-        <translation>複數的輻角 (相位)</translation>
+        <translation>複數的輻角(相位)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1142"/>
@@ -1957,7 +1957,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1151"/>
         <source>Secant</source>
-        <translation>正割 (sec)</translation>
+        <translation>正割(sec)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1152"/>
@@ -1972,17 +1972,17 @@
     <message>
         <location filename="../../core/functions.cpp" line="1154"/>
         <source>Signum</source>
-        <translation>正負號函數 (sgn)</translation>
+        <translation>正負號函數(sgn)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1155"/>
         <source>Sine</source>
-        <translation>正弦 (sin)</translation>
+        <translation>正弦(sin)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1156"/>
         <source>Hyperbolic Sine</source>
-        <translation>雙曲正弦 (sinh)</translation>
+        <translation>雙曲正弦(sinh)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1157"/>
@@ -1992,7 +1992,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1158"/>
         <source>Standard Deviation (Square Root of Variance)</source>
-        <translation>標準差 (變異數的平方根)</translation>
+        <translation>標準差(變異數的平方根)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1159"/>
@@ -2002,12 +2002,12 @@
     <message>
         <location filename="../../core/functions.cpp" line="1160"/>
         <source>Tangent</source>
-        <translation>正切 (tan)</translation>
+        <translation>正切(tan)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1161"/>
         <source>Hyperbolic Tangent</source>
-        <translation>雙曲正切 (tanh)</translation>
+        <translation>雙曲正切(tanh)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1162"/>
@@ -2027,7 +2027,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1165"/>
         <source>Logical XOR</source>
-        <translation>邏輯互斥或 (XOR)</translation>
+        <translation>邏輯互斥或(XOR)</translation>
     </message>
 </context>
 <context>
@@ -2118,12 +2118,12 @@
     <message>
         <location filename="../../gui/keypad.cpp" line="179"/>
         <source>Assign variable x</source>
-        <translation>指派變數 x</translation>
+        <translation>指派變數x</translation>
     </message>
     <message>
         <location filename="../../gui/keypad.cpp" line="180"/>
         <source>The variable x</source>
-        <translation>變數 x</translation>
+        <translation>變數x</translation>
     </message>
 </context>
 <context>
@@ -2138,7 +2138,7 @@
         <location filename="../../gui/mainwindow.cpp" line="270"/>
         <location filename="../../gui/mainwindow.cpp" line="1254"/>
         <source>Degree</source>
-        <translation>角度 (度)</translation>
+        <translation>角度(度)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="274"/>
@@ -2465,7 +2465,7 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="579"/>
         <source>&amp;Session</source>
-        <translation>作業階段(&amp;S)</translation>
+        <translation>會話(&amp;S)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="581"/>
@@ -2545,32 +2545,32 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="340"/>
         <source>&amp;0 Digits</source>
-        <translation>&amp;0 位小數</translation>
+        <translation>&amp;小數</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="341"/>
         <source>&amp;15 Digits</source>
-        <translation>&amp;15 位小數</translation>
+        <translation>&amp;1小數</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="342"/>
         <source>&amp;2 Digits</source>
-        <translation>&amp;2 位小數</translation>
+        <translation>&amp;小數</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="343"/>
         <source>&amp;3 Digits</source>
-        <translation>&amp;3 位小數</translation>
+        <translation>&amp;小數</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="344"/>
         <source>&amp;50 Digits</source>
-        <translation>&amp;50 位小數</translation>
+        <translation>&amp;5小數</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="345"/>
         <source>&amp;8 Digits</source>
-        <translation>&amp;8 位小數</translation>
+        <translation>&amp;小數</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="360"/>
@@ -2595,12 +2595,12 @@
     <message>
         <location filename="../../gui/mainwindow.cpp" line="595"/>
         <source>Digit Grouping</source>
-        <translation>數位分組 (千分位)</translation>
+        <translation>數位分組(千分位)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1338"/>
         <source>File %1 is not a valid session</source>
-        <translation>檔案 %1 不是有效的作業階段</translation>
+        <translation>檔案%是有效的作業階段</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1340"/>
@@ -2621,7 +2621,7 @@
         <location filename="../../gui/mainwindow.cpp" line="1346"/>
         <location filename="../../gui/mainwindow.cpp" line="1412"/>
         <source>Can&apos;t read from file %1</source>
-        <translation>無法讀取檔案 %1</translation>
+        <translation>無法讀取檔案%1</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1352"/>
@@ -2633,7 +2633,7 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1405"/>
         <source>All Files (*)</source>
-        <translation>所有檔案 (*)</translation>
+        <translation>所有檔案(*)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1406"/>
@@ -2662,12 +2662,12 @@ If no, current variables and display will be cleared.</source>
         <location filename="../../gui/mainwindow.cpp" line="1591"/>
         <location filename="../../gui/mainwindow.cpp" line="1612"/>
         <source>Can&apos;t write to file %1</source>
-        <translation>無法寫入檔案 %1</translation>
+        <translation>無法寫入檔案%1</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1605"/>
         <source>Text file (*.txt);;Any file (*.*)</source>
-        <translation>純文字檔 (*.txt);;所有檔案 (*.*)</translation>
+        <translation>純文字檔(*.txt);;所有檔案(*.*)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1643"/>
@@ -2748,7 +2748,7 @@ If no, current variables and display will be cleared.</source>
         <location filename="../../gui/mainwindow.cpp" line="1339"/>
         <location filename="../../gui/mainwindow.cpp" line="1384"/>
         <source>SpeedCrunch Sessions (*.json);;All Files (*)</source>
-        <translation>SpeedCrunch 作業階段 (*.json);;所有檔案 (*)</translation>
+        <translation>SpeedCrunc業階段(*.json);;所有檔案(*)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1357"/>
@@ -2759,12 +2759,12 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1583"/>
         <source>Export session as HTML</source>
-        <translation>匯出作業階段為 HTML</translation>
+        <translation>匯出作業階段為HTML</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1584"/>
         <source>HTML file (*.html)</source>
-        <translation>HTML 檔案 (*.html)</translation>
+        <translation>HTM案(*.html)</translation>
     </message>
     <message>
         <location filename="../../gui/mainwindow.cpp" line="1604"/>
@@ -2777,12 +2777,12 @@ If no, current variables and display will be cleared.</source>
     <message>
         <location filename="../../gui/manualwindow.cpp" line="69"/>
         <source>SpeedCrunch Manual</source>
-        <translation>SpeedCrunch 使用手冊</translation>
+        <translation>SpeedCrunc用手冊</translation>
     </message>
     <message>
         <location filename="../../gui/manualwindow.cpp" line="71"/>
         <source>%1 - SpeedCrunch Manual</source>
-        <translation>%1 - SpeedCrunch 使用手冊</translation>
+        <translation>%1 - SpeedCrunc用手冊</translation>
     </message>
 </context>
 <context>
