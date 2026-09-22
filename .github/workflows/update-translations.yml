@@ -1,0 +1,66 @@
+name: Update Qt translations
+
+on:
+  push:
+    branches:
+      - branch-0.12
+    paths:
+      - 'src/resources/locale/*.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-qm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install Qt 5.15.2
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          host: 'linux'
+          target: 'desktop'
+          arch: 'gcc_64'
+          modules: 'qttools'
+
+      - name: Compile TS to QM
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          ts_files=(src/resources/locale/*.ts)
+
+          if [ ${#ts_files[@]} -eq 0 ]; then
+            echo "No TS files found."
+            exit 0
+          fi
+
+          for ts in "${ts_files[@]}"; do
+            qm="${ts%.ts}.qm"
+            echo "lrelease: $ts -> $qm"
+            lrelease "$ts" -qm "$qm"
+          done
+
+      - name: Commit updated QM files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- src/resources/locale/*.qm; then
+            echo "No QM changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add src/resources/locale/*.qm
+          git commit -m "Update compiled translations"
+          git push
