@@ -6,6 +6,7 @@ on:
       - branch-0.12
     paths:
       - 'src/resources/locale/*.ts'
+      - '.github/workflows/update-translations.yml'
   workflow_dispatch:
 
 permissions:
