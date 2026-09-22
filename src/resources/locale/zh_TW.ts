@@ -1421,7 +1421,7 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="66"/>
         <source>cannot operate on a NaN</source>
-        <translation>無法對NaN (非數值行操作</translation>
+        <translation>無法對NaN(非數值行操作</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="69"/>
@@ -1455,7 +1455,7 @@
     <message>
         <location filename="../../core/evaluator.cpp" line="115"/>
         <source>does not take NaN as an argument</source>
-        <translation>不接受以NaN (非數值為引數</translation>
+        <translation>不接受以NaN(非數值為引數</translation>
     </message>
     <message>
         <location filename="../../core/evaluator.cpp" line="127"/>
@@ -1862,7 +1862,7 @@
     <message>
         <location filename="../../core/functions.cpp" line="1135"/>
         <source>Modulo</source>
-        <translation>取模(余數)</translation>
+        <translation>取模(餘數)</translation>
     </message>
     <message>
         <location filename="../../core/functions.cpp" line="1136"/>
