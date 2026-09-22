@@ -3,7 +3,12 @@ name: Build Windows Executable
 on:
   push:
     branches: [ "main", "master" ]
+    tags:
+      - "v*"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-windows:
@@ -56,9 +61,17 @@ jobs:
           windeployqt release_pkg\speedcrunch.exe
           Compress-Archive -Path release_pkg\* -DestinationPath SpeedCrunch-Windows.zip
 
-      # 5. 上傳檔供下載
+      # 5. 上傳供 Actions Artifact 下載
       - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
           name: SpeedCrunch-Windows-MSVC
           path: SpeedCrunch-Windows.zip
+
+      # 6. Tag 建立時自動建立/更新 GitHub Release
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: SpeedCrunch-Windows.zip
+          generate_release_notes: true
